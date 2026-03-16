@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -90,9 +90,10 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;ba
 .ut{width:100%;border-collapse:collapse;font-size:12px}
 .ut thead th{background:#1A3A5C;color:#fff;padding:9px 10px;text-align:left;white-space:nowrap;position:sticky;top:0;z-index:2}
 .ut thead th.sortable{cursor:pointer;user-select:none}
-.ut thead th.sortable:hover{background:#244d73}
-.ut thead th.sort-asc::after{content:' ▲';font-size:10px;opacity:.9}
-.ut thead th.sort-desc::after{content:' ▼';font-size:10px;opacity:.9}
+.ut thead th.sortable:hover{background:#244d73;text-decoration:underline}
+.ut thead th.sortable::after{content:' ↕';font-size:11px;opacity:.45}
+.ut thead th.sort-asc::after{content:' ▲';font-size:12px;opacity:1;color:#7EC8E3}
+.ut thead th.sort-desc::after{content:' ▼';font-size:12px;opacity:1;color:#7EC8E3}
 .ut tbody tr{transition:background .3s,opacity .5s}
 .ut tbody tr:nth-child(even){background:#F7FAFC}
 .ut tbody tr:hover{background:#EBF4FF}
