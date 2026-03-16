@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -140,20 +140,12 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;ba
       <span class="you-label">You are:</span>
       <select id="nav-you" class="you-sel" onchange="setYou()">
         <option value="">-- Select --</option>
-        <option value="Andy Wu">Andy Wu</option>
-<option value="Cindy">Cindy</option>
-<option value="Jerry">Jerry</option>
-<option value="Jaylene">Jaylene</option>
-<option value="Juda">Juda</option>
-<option value="Kerry">Kerry</option>
-<option value="Mind">Mind</option>
-<option value="Sai">Sai</option>
-<option value="Sandra">Sandra</option>
-<option value="Sara">Sara</option>
+        <option value="Cindy">Cindy</option>
+<option value="Jenny">Jenny</option>
+<option value="Tang">Tang</option>
 <option value="Sunny">Sunny</option>
-<option value="Ted">Ted</option>
-<option value="Tong Tong">Tong Tong</option>
-<option value="Tram Nguyen">Tram Nguyen</option>
+<option value="Juda">Juda</option>
+<option value="Other">Other</option>
       </select>
       <span class="nav-logout" onclick="logout()" title="Logout">⎋</span>
     </div>
@@ -200,20 +192,12 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;ba
       <span class="p2-top-label">You are</span>
       <select id="p2-you" class="p2-you" onchange="setYouP2()">
         <option value="">— Select your name —</option>
-        <option value="Andy Wu">Andy Wu</option>
-<option value="Cindy">Cindy</option>
-<option value="Jerry">Jerry</option>
-<option value="Jaylene">Jaylene</option>
-<option value="Juda">Juda</option>
-<option value="Kerry">Kerry</option>
-<option value="Mind">Mind</option>
-<option value="Sai">Sai</option>
-<option value="Sandra">Sandra</option>
-<option value="Sara">Sara</option>
+        <option value="Cindy">Cindy</option>
+<option value="Jenny">Jenny</option>
+<option value="Tang">Tang</option>
 <option value="Sunny">Sunny</option>
-<option value="Ted">Ted</option>
-<option value="Tong Tong">Tong Tong</option>
-<option value="Tram Nguyen">Tram Nguyen</option>
+<option value="Juda">Juda</option>
+<option value="Other">Other</option>
       </select>
       <div class="p2-divider"></div>
       <span style="font-size:12px;color:#718096">Select name before assigning any lead</span>
@@ -351,7 +335,7 @@ const CFG = {
   PW_EXPIRY: '2026-06-16',
   TOKEN    : 'ml_bd_9x2k7p',
   API_URL  : 'https://script.google.com/macros/s/AKfycby2CRYas9hgGrBEDrV08VqAFdTePXsZBoE1evOAfRVPDyy0GmnJFqg5gvcFFMI-Qqlv/exec',
-  BD_LIST  : ["Andy Wu", "Cindy", "Jerry", "Jaylene", "Juda", "Kerry", "Mind", "Sai", "Sandra", "Sara", "Sunny", "Ted", "Tong Tong", "Tram Nguyen"],
+  BD_LIST  : ["Cindy", "Jenny", "Tang", "Sunny", "Juda", "Other"],
 };
 
 // ── Embedded data (Dashboard) ────────────────────────────────────
@@ -571,7 +555,7 @@ async function loadLeads() {
   document.getElementById('p2-content').innerHTML =
     '<div class="load-box"><div class="spinner"></div><p style="color:#718096;font-size:13px">Loading from Google Sheets...</p></div>';
 
-  if (CFG.API_URL==='https://script.google.com/macros/s/AKfycby2CRYas9hgGrBEDrV08VqAFdTePXsZBoE1evOAfRVPDyy0GmnJFqg5gvcFFMI-Qqlv/exec') {
+  if (!CFG.API_URL || CFG.API_URL.indexOf('script.google.com')===-1) {
     document.getElementById('p2-content').innerHTML =
       '<div class="load-box"><p style="color:#F2994A;font-size:13px">⚙️ Apps Script URL not configured yet.<br>Follow setup instructions to connect Google Sheets.</p></div>';
     return;
